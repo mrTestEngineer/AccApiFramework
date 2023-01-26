@@ -1,6 +1,6 @@
 ## API Test Automation Framework Using Karate DSL
 
-This Framework is created to provide functional & performance testing for the Web APIs.
+This Framework is created to provide functional & performance testing for the Web APIs and Services.
 
 ### **How to Run Tests Locally**
 1- Make sure GIT, Maven, and Java is installed.
