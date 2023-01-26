@@ -2,16 +2,21 @@
 
 This Framework is created to provide functional & performance testing for the Web APIs.
 
-### **How to Run Tests**
+### **How to Run Tests Locally**
 1- Make sure GIT, Maven, and Java is installed.
 
 2- Clone the project
 
     git clone https://github.com/mrTestEngineer/AccApiFramework.git
 
-3- Run following command to run the smoke test suite in parallel mode in QA
+3- Navigate to webApi folder and run below command to start karate mock server locally
+
+    java -jar karate-1.3.1.jar -m todos_mock.feature -p 5000
+
+4- Run following command to run the smoke test suite in parallel mode
     
-    mvn clean test -Dkarate.options="--@tags @smoke" -Dkarate.env="qa"
+    mvn clean test -Dtest=ParallelTestRunner
+
 
 
 

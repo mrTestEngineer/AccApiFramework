@@ -4,7 +4,8 @@ Feature: Covers all HTTP GET calls
   Background: settings here
     # we can think of background as before hooks that will be evaluated before each test, so we can keep common resources here 
     # such as urls, data files, payloads, etc.
-    * url base_url
+    * url mock_url
+    * print "Base URL::", mock_url
     * def get_todos_responseModel = read('classpath:resources/responseModels/todos/todos_response_model.json')
     # util in line js method to get an index of an item from an array
     * def get_index = function(target, item){ return target.indexOf(item)}
@@ -13,7 +14,7 @@ Feature: Covers all HTTP GET calls
   @get_all @smoke  
   Scenario: get entire object and verify status code and response schema
     Given path 'todos'
-    When method GET
+    When method get
     Then status 200
     * match each response == get_todos_responseModel
     * print "GET Response::", response
