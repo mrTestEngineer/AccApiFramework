@@ -1,0 +1,6 @@
+{
+  "todos": "#[] karate.read('classpath:resources/responseModels/todos/todo_response_model.json')",
+  "total": "# number",
+  "skip": "# number",
+  "limit": "# number"
+}
