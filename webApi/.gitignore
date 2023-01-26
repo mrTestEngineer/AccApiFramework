@@ -1,9 +1,0 @@
-target/
-
-.vscode/*
-
-.classpath
-.project
-.settings
-
-.vscode/settings.json

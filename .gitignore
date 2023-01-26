@@ -1,1 +1,13 @@
+webApi/target/
+
+.vscode/
+
+.classpath
+.project
+.settings
+
 .vscode/settings.json
+
+.idea
+
+webApi.iml
