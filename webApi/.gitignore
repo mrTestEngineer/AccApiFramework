@@ -1,7 +1,9 @@
 target/
 
-.vscode/
+.vscode/*
 
 .classpath
 .project
 .settings
+
+.vscode/settings.json

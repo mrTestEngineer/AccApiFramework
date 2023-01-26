@@ -1,3 +1,4 @@
+@parallel=true
 Feature: Covers all HTTP GET calls
 
   Background: settings here
