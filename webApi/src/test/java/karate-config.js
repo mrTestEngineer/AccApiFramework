@@ -8,7 +8,7 @@ function fn() {
   var config = {
     env: env,
 //    base_url: 'https://63d1524c3f08e4a8ff9573ce.mockapi.io'
-    mock_url: 'http://localhost:5000'
+    mock_url: 'http://localhost:8089'
   }
 
   if (env == 'dev') {

@@ -6,19 +6,41 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+import com.github.tomakehurst.wiremock.WireMockServer;
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
+import features.helpers.mock.MockServiceSetup;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
 
 class ParallelTestRunner {
 
+
+    static WireMockServer wireMockServer = MockServiceSetup.getWireMockServer();
+
+    @BeforeAll
+    public static void setup(){
+        System.out.println("Starting Mock Service..");
+        wireMockServer.start();
+    }
+
+    @AfterAll
+    public static void finish(){
+        System.out.println("Stopping Mock Service..");
+        wireMockServer.stop();
+    }
+
+
     @Test
-    void testParallel() {
+    void testParallel() throws InterruptedException {
+
         Results results = Runner.path("classpath:features").tags("@smoke")
                 .outputCucumberJson(true)
                 .parallel(5);
